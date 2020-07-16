@@ -9,7 +9,7 @@ const curriculumSchema = new Schema({
     type: String,
     required: true,
   },
-  personal_information: {
+  personalInformation: {
     type: Object,
     required: true,
   },
@@ -21,7 +21,7 @@ const curriculumSchema = new Schema({
     type: Object,
     required: true,
   },
-  work_experience: {
+  workExperience: {
     type: Object,
     required: true,
   },

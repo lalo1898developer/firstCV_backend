@@ -1,4 +1,7 @@
 const { celebrate, Joi, Segments } = require('celebrate');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const JoiDate = require('@hapi/joi')
+  .extend(require('@hapi/joi-date'));
 
 module.exports = {
   create: celebrate({
@@ -12,13 +15,13 @@ module.exports = {
       profile: Joi.string().required(),
       academicData: Joi.array().items(Joi.object().keys({
         schoolName: Joi.string().required(),
-        entryYear: Joi.string().required(),
+        entryYear: JoiDate.date().format('YYYY').raw().required(),
         endYear: Joi.string().required(),
         bachelorName: Joi.string().required(),
       })),
       workData: Joi.array().items(Joi.object().keys({
         workName: Joi.string().required(),
-        entryYear: Joi.string().required(),
+        entryYear: JoiDate.date().format('YYYY').raw().required(),
         endYear: Joi.string().required(),
         position: Joi.string().required(),
         workDescription: Joi.string().required(),
@@ -28,7 +31,7 @@ module.exports = {
       })),
       courses: Joi.array().items(Joi.object().keys({
         academyName: Joi.string(),
-        realizationYear: Joi.string(),
+        realizationYear: JoiDate.date().format('YYYY').raw(),
         curseName: Joi.string(),
       })),
     }),
@@ -56,13 +59,13 @@ module.exports = {
       profile: Joi.string(),
       academicData: Joi.array().items(Joi.object().keys({
         schoolName: Joi.string(),
-        entryYear: Joi.string(),
+        entryYear: JoiDate.date().format('YYYY').raw(),
         endYear: Joi.string(),
         bachelorName: Joi.string(),
       })),
       workData: Joi.array().items(Joi.object().keys({
         workName: Joi.string(),
-        entryYear: Joi.string(),
+        entryYear: JoiDate.date().format('YYYY').raw(),
         endYear: Joi.string(),
         position: Joi.string(),
         workDescription: Joi.string(),
@@ -72,7 +75,7 @@ module.exports = {
       })),
       courses: Joi.array().items(Joi.object().keys({
         academyName: Joi.string(),
-        realizationYear: Joi.string(),
+        realizationYear: JoiDate.date().format('YYYY').raw(),
         curseName: Joi.string(),
       })),
     }),

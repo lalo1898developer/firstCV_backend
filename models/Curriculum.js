@@ -9,30 +9,34 @@ const curriculumSchema = new Schema({
     type: String,
     required: true,
   },
-  personalInformation: {
-    type: Object,
+  phone: {
+    type: String,
+    required: true,
+  },
+  postalCode: {
+    type: String,
     required: true,
   },
   profile: {
-    type: Object,
+    type: String,
     required: true,
   },
-  academic: {
+  academicData: [{
     type: Object,
     required: true,
-  },
-  workExperience: {
+  }],
+  workData: [{
     type: Object,
     required: true,
-  },
-  knowledge: {
-    type: Array,
+  }],
+  knowledge: [{
+    type: Object,
+    required: true,
+  }],
+  courses: [{
+    type: Object,
     required: false,
-  },
-  courses: {
-    type: Object,
-    required: false,
-  },
+  }],
   is_active: {
     type: Boolean,
     default: true,

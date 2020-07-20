@@ -41,7 +41,7 @@ const curriculumSchema = new Schema({
     type: Boolean,
     default: true,
   },
-});
+}, { timestamps: true, versionKey: false });
 
 const Curriculum = mongoose.model('Curriculum', curriculumSchema);
 

@@ -32,7 +32,7 @@ module.exports = {
       courses: Joi.array().items(Joi.object().keys({
         academyName: Joi.string(),
         realizationDate: JoiDate.date().format('DD/MM/YYYY').raw(),
-        curseName: Joi.string(),
+        courseName: Joi.string(),
       })),
     }),
   }),
@@ -76,7 +76,7 @@ module.exports = {
       courses: Joi.array().items(Joi.object().keys({
         academyName: Joi.string(),
         realizationDate: JoiDate.date().format('DD/MM/YYYY').raw(),
-        curseName: Joi.string(),
+        courseName: Joi.string(),
       })),
     }),
   }),
